@@ -25,7 +25,6 @@ export class Form extends React.Component {
   onChangeValue = (station, e) => {
     let v = e.target.value;
     station.value = v;
-    console.log("Akuku: ", v);
     this.setState({ data: this.state.data });
   };
 
@@ -39,7 +38,6 @@ export class Form extends React.Component {
 
   getColorForVariance = () => {
     var v = this.state.selected.value - this.state.selected.expected;
-    console.log(v);
     return v >= 0 ? "green" : "red";
   };
 

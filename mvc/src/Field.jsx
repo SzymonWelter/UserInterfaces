@@ -1,7 +1,6 @@
 import React from 'react';
 
 export function Field(props) {
-    console.log(props.colorForVariance);
     var readOnly = "editable" in props ? false : true;
     return (
       <li>
