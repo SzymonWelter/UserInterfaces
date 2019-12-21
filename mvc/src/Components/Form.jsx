@@ -1,6 +1,7 @@
-import React from 'react';
-import {Station} from './Station'
-import { DataSet } from "./data";
+import React from "react";
+import { Station } from "./Station";
+import { DataSet } from "data";
+import { formController } from "Controllers";
 
 export class Form extends React.Component {
   constructor(props) {
@@ -12,57 +13,57 @@ export class Form extends React.Component {
   }
 
   selected = e => {
-    var id = e.target.value;
-    for (var idx in this.state.data.stations) {
-      var s = this.state.data.stations[idx];
-      if (s.id === parseInt(id)) {
-        this.setState({ selected: s });
-        return;
-      }
-    }
+    const id = e.target.value;
+    const stations = this.state.data.stations;
+
+    const selected = formController.selected(id, stations);
+
+    this.setState({ selected: selected });
   };
 
   onChangeValue = (station, e) => {
-    let v = e.target.value;
-    station.value = v;
-    this.setState({ data: this.state.data });
+    const value = e.target.value;
+    const stations = this.state.data.stations;
+
+    const newData = formController.onChange(station, value, stations);
+
+    this.setState({ data: newData });
   };
 
   updateColor = () => {
     var e = document.getElementById("input-expected");
     if (e) {
-      //var v = parseInt(e.value);
       e.style.color = this.getColorForVariance();
     }
   };
 
   getColorForVariance = () => {
-    var v = this.state.selected.value - this.state.selected.expected;
-    return v >= 0 ? "green" : "red";
+    const value = this.state.selected.value - this.state.selected.expected;
+    const color = formController.varianceColor(value);
+    return color;
   };
 
   componentDidMount() {
-    //this.updateColor();
+    this.updateColor();
   }
 
   componentDidUpdate() {
-    //this.updateColor();
+    this.updateColor();
   }
 
   render() {
+    const stations = this.state.data.stations;
     return (
       <div>
         <div className="container">
           <div className="row">
             <div className="col-4">
               <select name="stations" multiple onChange={this.selected}>
-                {this.state.data.stations.map((s, idx) => {
-                  return (
-                    <option key={idx} value={s.id}>
-                      {s.name}
-                    </option>
-                  );
-                })}
+                {stations.map((s, i) => (
+                  <option key={i} value={s.id}>
+                    {s.name}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="col-4">

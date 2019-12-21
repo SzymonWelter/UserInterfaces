@@ -1,7 +1,10 @@
 import React from 'react';
+import { fieldController } from 'Controllers'
 
 export function Field(props) {
-    var readOnly = "editable" in props ? false : true;
+    const readOnly =  fieldController.isReadonly(props);
+    const colorForVariance = fieldController.getColorForVariance(props);
+
     return (
       <li>
         <span>{props.label}</span>
@@ -13,7 +16,7 @@ export function Field(props) {
             value={props.value}
             onChange={props.onChangeValue}
             style={{
-              color: props.colorForVariance ? props.colorForVariance() : "black"
+              color: colorForVariance
             }}
           />
         </span>
