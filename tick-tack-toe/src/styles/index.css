@@ -1,0 +1,60 @@
+.board {
+    margin: auto;
+    width: 300px;
+}
+
+.row, .col {
+    margin:0;
+    padding: 0;
+}
+
+.cell{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.cell:hover{
+    background-color: rgba(65, 130, 214, 0.445);
+}
+
+.cell--x{
+    background-image: url("../assets/x.jpg");
+}
+
+.cell--o{
+    background-image: url("../assets/o.svg");
+}
+
+.cell--x, .cell--o{
+    background-size: cover;
+    cursor: initial;
+}
+
+.cell--disabled{
+    pointer-events: none;
+}
+
+.cell--x:hover, .cell--o:hover{
+    background-color: white;
+}
+
+.game-dialog{
+    text-align: center;
+}
+
+.newgame-wrapper{
+    text-align: center;
+}
+
+.newgame-button{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.newgame-button:hover{
+    background-color: rgb(216, 216, 216);
+}
