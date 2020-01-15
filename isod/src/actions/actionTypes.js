@@ -1,0 +1,6 @@
+export const actionTypes = {
+    FETCH_ITEMS: 'FETCH_ITEMS',
+    START_LOADING: 'START_LOADING',
+    END_LOADING: 'END_LOADING',
+    FILTER_ITEMS: 'FILTER_ITEMS'
+}
