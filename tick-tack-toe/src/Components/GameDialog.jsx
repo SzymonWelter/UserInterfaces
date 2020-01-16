@@ -2,6 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 
 function GameDialog(props) {
+
+  const counter = time => time === -1 ? '' : `, ${time}s`;
+
   return (
     <div className="game-dialog">
       <h2>{props.text}</h2>
@@ -12,7 +15,7 @@ function GameDialog(props) {
           <h3>Draft!</h3>
         )
       ) : (
-        <h3>{props.currentUser.toUpperCase()} turn</h3>
+        <h3>{props.currentUser.toUpperCase()} turn{counter(props.time)}</h3>
       )}
     </div>
   );
@@ -20,6 +23,7 @@ function GameDialog(props) {
 
 const mapStateToProps = state => ({
   winner: state.ticktacktoe.winner,
-  currentUser: state.ticktacktoe.currentUser
+  currentUser: state.ticktacktoe.currentUser,
+  time: state.ticktacktoe.time
 });
 export default connect(mapStateToProps)(GameDialog);

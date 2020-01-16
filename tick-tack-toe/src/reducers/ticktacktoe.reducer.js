@@ -5,10 +5,12 @@ const initialState = {
   board: Array(9).fill(""),
   currentUser: "x",
   winner: "",
-  endGame: false
+  endGame: false,
+  time: -1
 };
 
 export default function(state = initialState, action) {
+  let winner = "";
   switch (action.type) {
     case actionTypes.NEW_MOVE:
       if (state.board[action.newMove]) {
@@ -20,17 +22,34 @@ export default function(state = initialState, action) {
       );
       const newUser = state.currentUser === "x" ? "o" : "x";
 
-      const winner = checkWinner(newBoard);
+      winner = checkWinner(newBoard);
+      const time = winner ? -1 : 15;
 
       return {
         ...state,
+        time: time,
         board: newBoard,
         currentUser: newUser,
         winner: winner
       };
     case actionTypes.NEW_GAME:
       return {
-        ...initialState
+        ...initialState,
+        time: 15
+      };
+    case actionTypes.UPDATE_TIME:
+      if (state.winner) {
+        return { ...state };
+      }
+
+      if (!state.time) {
+        winner = state.currentUser === "x" ? "o" : "x";
+      }
+
+      return {
+        ...state,
+        time: state.time - 1,
+        winner: winner
       };
     default:
       return {

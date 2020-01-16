@@ -18,12 +18,13 @@ function Cell(props) {
 }
 
 function onClick(e, props){
-    props.newMove(e.target.id);
+    props.newMove(e.target.id, props.time);
 }
 
 const mapStateToProps = state => ({
   board: state.ticktacktoe.board,
-  winner: state.ticktacktoe.winner
+  winner: state.ticktacktoe.winner,
+  time: state.ticktacktoe.time
 });
 export default connect(mapStateToProps, { newMove })(Cell);
 
