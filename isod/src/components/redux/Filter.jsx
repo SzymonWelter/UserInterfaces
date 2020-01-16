@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { filterItems } from "actions/isodActions";
+import { filterItems } from "actions/reduxActions";
 function Filter(props) {
   return (
     <div className="filter-wrapper">

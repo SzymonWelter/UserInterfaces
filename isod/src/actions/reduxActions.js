@@ -1,6 +1,6 @@
 import { actionTypes } from "./actionTypes";
 
-export const fetchItems = () => dispatch => {
+const fetchItems = () => dispatch => {
   dispatch({
     type: actionTypes.START_LOADING
   });
@@ -20,9 +20,14 @@ export const fetchItems = () => dispatch => {
     );
 };
 
-export const filterItems = (value) => dispatch => {
+const filterItems = (value) => dispatch => {
     dispatch({
         type: actionTypes.FILTER_ITEMS,
         filter: value
     })
+}
+
+export {
+  fetchItems,
+  filterItems
 }

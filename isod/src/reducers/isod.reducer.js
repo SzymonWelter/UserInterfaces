@@ -2,7 +2,8 @@ import { actionTypes } from "actions/actionTypes";
 import {filterResolver} from "helpers/filterResolver";
 const initialState = {
   items: undefined,
-  loading: false
+  loading: false,
+  filter:''
 };
 
 export default function(state = initialState, action) {
@@ -26,7 +27,8 @@ export default function(state = initialState, action) {
     case actionTypes.FILTER_ITEMS:
       return{
           ...state,
-          items: state.data.filter(elem => filterResolver(elem, action.filter))
+          items: state.data.filter(elem => filterResolver(elem, action.filter)),
+          filter: action.filter
       }
     default:
       return state;

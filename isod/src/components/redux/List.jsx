@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchItems } from "actions/isodActions";
+import { fetchItems } from "actions/reduxActions";
 import Element from "./Element";
 
 class List extends Component {
-  render() {
+
+  componentDidMount(){
     if (!this.props.items) {
       this.props.fetchItems();
     }
+  }
+
+  render() {
     return (
       <ul>
         {this.props.items &&

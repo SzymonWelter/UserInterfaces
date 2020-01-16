@@ -8,12 +8,16 @@ const fields = [
 ];
 
 export function filterResolver(value, pattern){
-
+    pattern = pattern.trim();
     for(let f of fields){
         if(valueIncludes(value[f], pattern)){
             return true;
         }
     }
+    if(valueIncludes(`${value['supervisor_firstname']} ${value['supervisor_lastname']}`, pattern)){
+        return true;
+    }
+
     return false;
 }
 
