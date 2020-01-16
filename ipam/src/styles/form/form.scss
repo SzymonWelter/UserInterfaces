@@ -1,0 +1,56 @@
+@import "../constants.scss";
+
+.form {
+  &-wrapper {
+    min-width: 500px;
+    padding: 30px 5px;
+    border-radius: 5px;
+    text-align: center;
+
+    &--shadowed {
+      box-shadow: 0px 0px 10px 0px rgb(158, 158, 158);
+    }
+    &--light {
+      background-color: $second-color;
+    }
+  }
+  &__title {
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 3em;
+    font-weight: bold;
+  }
+  &-input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid $main-color;
+    height: 40px;
+    width: 70%;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border-width: 2px;
+    }
+    &__name {
+      text-transform: uppercase;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    &--submit{
+        background-color: $main-color;
+        color: $second-color;
+        margin: 10px 0;
+        cursor: pointer;
+        border: none;
+        &:hover, &:focus{
+            background-color: $main-color--light;
+        }
+    }
+  }
+}
+.input-area {
+  margin: 10px 0;
+}

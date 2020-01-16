@@ -1,0 +1,23 @@
+@import "./form/form.scss";
+@import './constants.scss';
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body{
+    background-color: $background-color;
+    color: $main-color;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
