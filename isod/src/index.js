@@ -9,7 +9,8 @@ import { reduxStore, StoreProvider } from "stores";
 import reducer from "reducers/isod.reducer";
 
 const initialState = {
-  filter: ''
+  filter: '',
+  loading: false
 };
 
 ReactDOM.render(

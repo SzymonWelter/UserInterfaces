@@ -1,20 +1,20 @@
-import { actionTypes } from './actionTypes';
+import { actionTypes } from "./actionTypes";
 
-const fetchItems = (payload) => {
-    return {
-        type: actionTypes.FETCH_ITEMS,
-        payload: payload
-    };
-}
+const fetchItems = payload => ({
+  type: actionTypes.FETCH_ITEMS,
+  payload: payload
+});
 
-const filterItems = (value) => {
-    return{
-        type: actionTypes.FILTER_ITEMS,
-        filter: value
-    };
-}   
+const filterItems = value => ({
+  type: actionTypes.FILTER_ITEMS,
+  filter: value
+});
 
-export {
-    fetchItems,
-    filterItems
-}
+const startLoading = () => ({
+    type: actionTypes.START_LOADING
+});
+
+const stopLoading = () => ({
+    type: actionTypes.END_LOADING
+});
+export { fetchItems, filterItems, startLoading, stopLoading };

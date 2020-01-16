@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchItems } from "actions/contextActions";
+import { fetchItems, startLoading, stopLoading } from "actions/contextActions";
 import Element from "./Element";
 import { useStore } from "stores";
 
@@ -8,16 +8,20 @@ function List(props) {
 
   useEffect(() => {
     if (!items) {
+      dispatch(startLoading())
       fetch(
         "https://isod.ee.pw.edu.pl/isod-portal/wapi?q=dissertations_graduated"
       )
         .then(res => res.json())
         .then(items => {
           dispatch(fetchItems(items.list));
+        })
+        .then(() => {
+          dispatch(stopLoading());
         });
     }
   });
-  
+
   return (
     <ul>
       {items &&
