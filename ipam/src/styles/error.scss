@@ -1,0 +1,15 @@
+.error {
+    color: red;
+    font-weight: bold;
+    line-break: normal;
+
+    &-wrapper{
+        width: 300px;
+        max-height: 100px;
+        line-break: auto;
+        margin: auto;
+        justify-content: center;
+        text-align: center;
+        overflow: auto;;
+    }
+}

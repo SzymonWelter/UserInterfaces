@@ -1,4 +1,4 @@
-@import "../constants.scss";
+@import "./constants.scss";
 
 .form {
   &-wrapper {
@@ -10,44 +10,59 @@
     &--shadowed {
       box-shadow: 0px 0px 10px 0px rgb(158, 158, 158);
     }
+
     &--light {
       background-color: $second-color;
     }
   }
+
   &__title {
-    text-align: center;
-    padding: 20px 0px;
     font-size: 3em;
+    padding: 20px 0px;
     font-weight: bold;
+    text-align: center;
   }
+
   &-input {
+    width: 70%;
+    height: 40px;
     padding: 10px;
     border-radius: 20px;
     border: 1px solid $main-color;
-    height: 40px;
-    width: 70%;
 
     &:focus,
     &:hover {
       outline: none;
       border-width: 2px;
     }
-    &__name {
-      text-transform: uppercase;
-      display: block;
-      margin: 0;
-      padding: 0;
+
+    &:disabled {
+      border-width: 1px;
+      cursor: not-allowed;
     }
 
-    &--submit{
+    &__name {
+      margin: 0;
+      padding: 0;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    &--submit {
+      border: none;
+      margin: 10px 0;
+      cursor: pointer;
+      color: $second-color;
+      background-color: $main-color;
+
+      &:hover,
+      &:focus {
+        background-color: $main-color--light;
+      }
+
+      &:disabled {
         background-color: $main-color;
-        color: $second-color;
-        margin: 10px 0;
-        cursor: pointer;
-        border: none;
-        &:hover, &:focus{
-            background-color: $main-color--light;
-        }
+      }
     }
   }
 }
