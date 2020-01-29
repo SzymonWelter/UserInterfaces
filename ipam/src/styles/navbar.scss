@@ -4,7 +4,7 @@
     &-wrapper{
         width: 200px;
         flex-shrink: 0;
-        background-color: white;
+        background-color: $second-color;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -15,9 +15,9 @@
         border-radius: 10px;
         &:hover, &--active{
             background-color: $main-color;
-            color: white;
+            color: $second-color;
             & a{
-                color: white;
+                color: $second-color;
             }
         }
     }
