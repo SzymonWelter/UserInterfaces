@@ -9,6 +9,7 @@ function Form(props) {
         e.preventDefault();
         props.onSubmit(e.target);
       }}
+      className={props.className}
     >
       <h2 className="form__title">{props.title}</h2>
       {props.inputs.map((input, index) => (

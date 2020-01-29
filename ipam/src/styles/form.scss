@@ -1,6 +1,12 @@
 @import "./constants.scss";
 
 .form {
+
+  &-center {
+    text-align: center;
+    width: 100%;
+  }
+
   &-wrapper {
     min-width: 500px;
     padding: 30px 5px;
@@ -84,6 +90,7 @@
   &:hover,
   &:focus {
     background-color: $main-color;
+    outline: none;
   }
 
   &:disabled {

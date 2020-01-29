@@ -1,7 +1,6 @@
 import actionTypes from "./actionTypes";
 import { authService } from "src/js/services";
-
-const signIn = form => dispatch => {
+const signIn = (form) => dispatch => {
   dispatch({
     type: actionTypes.SIGNING_IN
   });
