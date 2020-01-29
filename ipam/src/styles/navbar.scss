@@ -1,0 +1,37 @@
+@import './constants.scss';
+
+.main-navbar{
+    &-wrapper{
+        width: 200px;
+        flex-shrink: 0;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 2rem 2rem 0;
+        box-shadow: 0px 0px 50px 0px rgb(158, 158, 158);
+    }
+    &__item{
+        border-radius: 10px;
+        &:hover, &--active{
+            background-color: $main-color;
+            color: white;
+            & a{
+                color: white;
+            }
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+        color: $main-color;
+        width: 150px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+}

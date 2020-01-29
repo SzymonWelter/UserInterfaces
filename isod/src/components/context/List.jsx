@@ -8,7 +8,7 @@ function List(props) {
 
   useEffect(() => {
     if (!items) {
-      dispatch(startLoading())
+      dispatch(startLoading());
       fetch(
         "https://isod.ee.pw.edu.pl/isod-portal/wapi?q=dissertations_graduated"
       )

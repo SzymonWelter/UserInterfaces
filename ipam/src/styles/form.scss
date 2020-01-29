@@ -27,6 +27,8 @@
     width: 70%;
     height: 40px;
     padding: 10px;
+    font-weight: bold;
+    text-align: center;
     border-radius: 20px;
     border: 1px solid $main-color;
 
@@ -46,6 +48,7 @@
       padding: 0;
       display: block;
       text-transform: uppercase;
+      font-weight: bolder;
     }
 
     &--submit {
@@ -68,4 +71,23 @@
 }
 .input-area {
   margin: 10px 0;
+}
+.add-new{
+  border: none;
+  margin: 10px 0;
+  color: $second-color;
+  padding: 10px;
+  font-size: 20px;
+  background-color: $main-color--light;
+  border-radius: 10px;
+
+  &:hover,
+  &:focus {
+    background-color: $main-color;
+  }
+
+  &:disabled {
+    background-color: $main-color;
+  }
+
 }

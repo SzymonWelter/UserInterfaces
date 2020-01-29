@@ -1,0 +1,17 @@
+.page{
+    &-wrapper{
+    margin: 50px;
+    background-color: white;
+    padding: 2em;
+    width: 100%;
+    height: calc(100% - 100px);
+    box-shadow: 0px 0px 30px 0px rgb(158, 158, 158);
+    &--border-radius{
+      border-radius: 2em;
+    }
+  }
+  &-header{
+      text-align: center;
+      text-transform: uppercase;
+  }
+}
