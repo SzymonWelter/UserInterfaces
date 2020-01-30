@@ -1,4 +1,5 @@
 export default [
+    { name: "name", title: "name", type: "text", class: "" },
     { name: "ip", title: "ip", type: "text", class: "" },
     { name: "hostname", title: "hostname", type: "text", class: "" },
     { name: "description", title: "description", type: "text", class: "" },

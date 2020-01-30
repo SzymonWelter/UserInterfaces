@@ -1,6 +1,6 @@
 import authService from './auth.service';
-import requestsService from './requests.service';
+import contextService from './context.service';
 export {
     authService,
-    requestsService
+    contextService
 };

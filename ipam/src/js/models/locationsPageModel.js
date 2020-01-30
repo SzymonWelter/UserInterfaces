@@ -1,5 +1,5 @@
 export default [
-    { name: "location", title: "location", type: "text", class: "" },
+    { name: "name", title: "name", type: "text", class: "" },
     { name: "description", title: "description", type: "text", class: "" },
     {
         name: "submit",
